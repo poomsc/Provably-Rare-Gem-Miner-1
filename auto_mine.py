@@ -47,9 +47,9 @@ chain_id = 1  # eth
 
 if NOTIFY_AUTH_TOKEN != '':
     body = {
-        'message': 'Starting gem mining...'
+        'message': 'Start mining...'
                    + '\nkind: ' + str(target_gem)
-                   + '\nwallet: ' + your_address
+                   + '\nwallet: ' + int(sys.argv[1])
                    + '\nnonce: ' + str(nonce)
                    + '\ndifficulty: ' + str(difficulty)
     }
@@ -67,7 +67,7 @@ if NOTIFY_AUTH_TOKEN != '':
     body = {
         'message': 'Gem found'
                    + '\nkind: ' + str(target_gem)
-                   + '\nwallet: ' + your_address
+                   + '\nwallet: ' + int(sys.argv[1])
                    + '\nnonce: ' + str(nonce)
                    + '\ndifficulty: ' + str(difficulty)
                    + '\nsalt: ' + str(salt)
