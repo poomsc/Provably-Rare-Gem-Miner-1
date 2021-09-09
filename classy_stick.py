@@ -17,6 +17,7 @@ class BasicDiffCallback:
 
     def get_diff(self):
         _, _, _, difficulty, _, _, _, _, _ = self.contract.functions.gems(self.gem).call()
+        print('difficulty:', difficulty)
         return difficulty
 
 
@@ -63,7 +64,7 @@ class StickTheMiner:
                     self.line_notify.send(template)
                 return salt
 
-            if i % 5000 == 0:
+            if i % 100000 == 0:
                 if self.diff_callback is not None:
                     self.diff = self.diff_callback.get_diff()
                     self.target = 2 ** 256 / self.diff
