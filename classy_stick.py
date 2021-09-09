@@ -47,7 +47,7 @@ class StickTheMiner:
 
     def run(self):
         i = 0
-        st = time.time()
+        # st = time.time()
         while True:
             i += 1
             salt = self.get_salt()
@@ -56,7 +56,7 @@ class StickTheMiner:
 
             if ix < self.target:
                 template = "done! here's the salt - " + str(salt) + "\n"
-                template += f'Elapsed: {str(timedelta(seconds=(time.time() - st)))}\n' + f'found on: {datetime.now().strftime("%d/%m/%Y %H:%M:%S")}'
+                # template += f'Elapsed: {str(timedelta(seconds=(time.time() - st)))}\n' + f'found on: {datetime.now().strftime("%d/%m/%Y %H:%M:%S")}'
 
                 print(template)
                 if self.line_notify is not None:
@@ -67,4 +67,4 @@ class StickTheMiner:
                 if self.diff_callback is not None:
                     self.diff = self.diff_callback.get_diff()
                     self.target = 2 ** 256 / self.diff
-                print(f'iter {i}, {i / (time.time() - st)} avg iter per sec, current diff {self.diff}')
+                # print(f'iter {i}, {i / (time.time() - st)} avg iter per sec, current diff {self.diff}')

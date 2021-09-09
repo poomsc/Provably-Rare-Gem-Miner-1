@@ -9,14 +9,16 @@ from classy_stick import StickTheMiner, BasicDiffCallback
 import os
 from dotenv import load_dotenv
 import requests
+import sys
 
 load_dotenv()
 
 # change wallet here or in .env
-WALLET_ADDRESS = os.getenv('WALLET_ADDRESS', 'DEFAULT_WALLET')
+WALLET_ADDRESS = ["0xea01D78F8a5f8AcA51aD00012c601Cc7B3479e3F",
+                "0xC6119CFe3a58135AFa48a520B137C9f285A2C942"][int(sys.argv[1])]
 # change influra api key here or in .env
 INFLURA_API_KEY = os.getenv('INFLURA_API_KEY', 'DEFAULT_INFLURA')
-TARGET_GEM = int(os.getenv('TARGET_GEM', 1))  # change gem here or in .env
+TARGET_GEM = int(sys.argv[2])
 
 # config here
 w3 = Web3(Web3.HTTPProvider(f'https://mainnet.infura.io/v3/{INFLURA_API_KEY}'))
