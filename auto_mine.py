@@ -49,7 +49,7 @@ if NOTIFY_AUTH_TOKEN != '':
     body = {
         'message': 'Start mining...'
                    + '\nkind: ' + str(target_gem)
-                   + '\nwallet: ' + int(sys.argv[1])
+                   + '\nwallet: ' + sys.argv[1]
                    + '\nnonce: ' + str(nonce)
                    + '\ndifficulty: ' + str(difficulty)
     }
@@ -67,7 +67,7 @@ if NOTIFY_AUTH_TOKEN != '':
     body = {
         'message': 'Gem found'
                    + '\nkind: ' + str(target_gem)
-                   + '\nwallet: ' + int(sys.argv[1])
+                   + '\nwallet: ' + sys.argv[1]
                    + '\nnonce: ' + str(nonce)
                    + '\ndifficulty: ' + str(difficulty)
                    + '\nsalt: ' + str(salt)
